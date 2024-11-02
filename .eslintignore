@@ -1,0 +1,5 @@
+node_modules/
+dist/
+NetscriptDefinitions.d.ts
+src/template.ts
+.oldbatcher_backup

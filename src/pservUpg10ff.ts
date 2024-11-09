@@ -35,7 +35,7 @@ export async function main(ns: NS): Promise<void> {
           logger.error(`Failed to upgrade ${server} to ${targetRam} GB.`);
         }
       } else {
-        logger.warn(`Not enough money to upgrade ${server}. Cost: ${ns.nFormat(cost, '$0.00a')}`);
+        logger.warn(`Not enough money to upgrade ${server}. Cost: ${ns.formatNumber(cost)}`);
       }
     } else {
       logger.info(`${server} already has ${currentRam} GB or more.`);

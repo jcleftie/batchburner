@@ -66,7 +66,6 @@ const serverList: string[] = [
   'clarkinc',
   'fulcrumtech',
   'megacorp',
-  'darkweb',
   'nwo',
   'ecorp',
   'fulcrumassets',
@@ -81,6 +80,7 @@ const serverList: string[] = [
 export async function main(ns: NS): Promise<void> {
   const logger = new Logger(ns, 'apc');
   const startTime = new Date().toISOString();
+  const logPort = 20; // Define which port to use
   const crackedServers: { [server: string]: string[] } = {}; // Track servers and the tools used to crack them
   const failedServers: string[] = []; // Track servers that couldn't be cracked
 
@@ -147,4 +147,9 @@ export async function main(ns: NS): Promise<void> {
   await ns.write(filename, JSON.stringify(summary, null, 2), 'w');
 
   logger.info(`APC script completed. Results saved to ${filename}`);
+  logger.info('SCP setup complete.');
+  // Log the completion of the process
+  const endMessage = 'Finished port crack attempts.';
+  logger.info(endMessage);
+  ns.writePort(logPort, endMessage);
 }

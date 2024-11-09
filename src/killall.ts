@@ -1,19 +1,19 @@
 import { NS } from '@ns';
-import { Logger } from '../logger/logger';
+
+const DELAY_BETWEEN_SERVERS = 300; // Delay in milliseconds between each server check
+
 /**
- * Distributes and runs a specified script on a list of target servers.
+ * Main function to iterate through all purchased and target servers,
+ * and kill all scripts running on each one, with a delay between each.
  *
- * @param ns - Netscript environment
+ * @param ns - The Netscript environment.
  */
-
 export async function main(ns: NS): Promise<void> {
-  const logger = new Logger(ns, 'ez-scp');
-  const FILES_TO_COPY = ['logger/logger.js', 'reset/early.js'];
-  const logPort = 20; // Define which port to use
+  // Define your purchased servers (pserv-)
+  const purchasedServers = ns.getPurchasedServers();
 
-  // Identify purchased servers and target hosts
-  const pservs = ns.getPurchasedServers();
-  const targetHosts = [
+  // Define your target servers
+  const targetServers = [
     'neo-net',
     'silver-helix',
     'omega-net',
@@ -42,7 +42,6 @@ export async function main(ns: NS): Promise<void> {
     'sigma-cosmetics',
     'joesguns',
     'nectar-net',
-    'hong-fang-tea',
     'hong-fang-tea',
     'harakiri-sushi',
     'zer0',
@@ -85,22 +84,28 @@ export async function main(ns: NS): Promise<void> {
     'avmnite-02h',
   ];
 
-  // Combine pservs and targetHosts into one list
-  const hostsToCopy = [...pservs, ...targetHosts];
+  // Combine both arrays into one for easier iteration
+  const allServers = [...purchasedServers, ...targetServers];
 
+  // Iterate through each server with a delay between each
+  for (const server of allServers) {
+    // Check if the server exists
+    if (ns.serverExists(server)) {
+      ns.tprint(`Killing all scripts on ${server}...`);
 
-  // Copy files to each host
-  for (const host of hostsToCopy) {
-    const success = await ns.scp(FILES_TO_COPY, host, 'home');
-    if (success) {
-      logger.info(`Successfully copied files to ${host}`);
+      // Kill all running scripts on the server
+      const result = ns.killall(server);
+
+      if (result) {
+        ns.tprint(`Successfully killed all scripts on ${server}`);
+      } else {
+        ns.tprint(`No scripts running on ${server}`);
+      }
     } else {
-      logger.error(`Failed to copy files to ${host}`);
+      ns.tprint(`Server ${server} does not exist.`);
+    }
+
+    // Delay before moving to the next server
+    await ns.sleep(DELAY_BETWEEN_SERVERS);
   }
-  logger.info('SCP setup complete.');
-    // Log the completion of the process
-  const endMessage = 'Finished attempting to purchase and set up all servers.';
-  logger.info(endMessage);
-  ns.writePort(logPort, endMessage);
-}
 }

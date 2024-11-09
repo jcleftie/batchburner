@@ -1,0 +1,340 @@
+scp earlyOG.js n00dles; scp earlyOG.js sigma-cosmetics; scp earlyOG.js joesguns; scp earlyOG.js nectar-net; scp earlyOG.js hong-fang-tea; scp earlyOG.js harakiri-sushi; scp earlyOG.js foodnstuff;
+scp earlyOG.js max-hardware; scp earlyOG.js CSEC; scp earlyOG.js neo-net; scp earlyOG.js the-hub; scp earlyOG.js rothman-uni; scp earlyOG.js summit-uni; scp earlyOG.js alpha-ent; scp earlyOG.js omnia;
+scp earlyOG.js univ-energy; scp earlyOG.js millenium-fitness; scp earlyOG.js global-pharm; scp earlyOG.js phantasy; scp earlyOG.js I.I.I.I; scp earlyOG.js omega-net; scp earlyOG.js zb-institute;
+scp earlyOG.js lexo-corp; scp earlyOG.js unitalife; scp earlyOG.js solaris; scp earlyOG.js catalyst; scp earlyOG.js aevum-police; scp earlyOG.js iron-gym; scp earlyOG.js zer0; scp earlyOG.js silver-helix;
+scp earlyOG.js netlink; scp earlyOG.js avmnite-02h; scp earlyOG.js rho-construction
+
+run findserver.js n00dles
+direct
+
+run findserver.js foodnstuff
+direct
+
+run findserver.js sigma-cosmetics
+direct
+
+run findserver.js joesguns
+direct
+
+run findserver.js nectar-net
+connect hong-fang-tea; connect nectar-net
+
+run findserver.js hong-fang-tea
+direct
+
+run findserver.js harakiri-sushi
+direct
+
+run findserver.js max-hardware
+connect sigma-cosmetics; connect max-hardware
+
+run findserver.js CSEC
+connect hong-fang-tea; connect CSEC
+
+run findserver.js neo-net
+connect hong-fang-tea; connect CSEC; connect neo-net
+
+run findserver.js the-hub
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect the-hub
+
+run findserver.js rothman-uni
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni
+
+run findserver.js summit-uni
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; connect summit-uni
+
+run findserver.js alpha-ent
+connect hong-fang-tea; connect CSEC; connect neo-net; connect crush-fitness; connect zb-institute; connect alpha-ent
+
+run findserver.js omnia
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect lexo-corp; connect snap-fitness; connect omnia
+
+run findserver.js univ-energy
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect rho-construction; connect global-pharm; connect unitalife; connect univ-energy
+
+run findserver.js millenium-fitness
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; connect syscore; connect millenium-fitness
+
+run findserver.js global-pharm
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect rho-construction; connect global-pharm
+
+run findserver.js phantasy
+connect hong-fang-tea; connect nectar-net; connect phantasy
+
+run findserver.js I.I.I.I
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; connect I.I.I.I
+
+run findserver.js omega-net
+connect hong-fang-tea; connect CSEC; connect omega-net
+
+run findserver.js zb-institute
+connect hong-fang-tea; connect CSEC; connect neo-net; connect crush-fitness; connect zb-institute
+
+run findserver.js lexo-corp
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect lexo-corp
+
+run findserver.js unitalife
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect rho-construction; connect global-pharm; connect unitalife
+
+run findserver.js solaris
+connect hong-fang-tea; connect CSEC; connect neo-net; connect crush-fitness; connect zb-institute; connect alpha-ent; connect aerocorp; connect deltaone; connect solaris
+
+run findserver.js catalyst
+connect hong-fang-tea; connect CSEC; connect neo-net; connect johnson-ortho; connect catalyst
+
+run findserver.js aevum-police
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; connect syscore; connect aevum-police
+
+run findserver.js iron-gym
+direct
+
+run findserver.js zer0
+connect foodnstuff; connect zer0
+
+run findserver.js silver-helix
+connect hong-fang-tea; connect nectar-net; connect silver-helix
+
+run findserver.js netlink
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink
+
+run findserver.js avmnite-02h
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h
+
+run findserver.js rho-construction
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect rho-construction
+
+===========================================
+run earlyOG.js -t [n] phantasy
+
+command - script - flag - thread count - target
+1. find server and get connection string
+2. run connection string and install backdoor
+3. if unable to install backdoor, paste connection string for script run
+4. connect to targetHost
+6. use threads calculation for the targetHost
+7. run earlyOG.js -t [n] phantasy
+8. go back to home server
+9. repeat for the next targetHost
+
+
+connect n00dles; run earlyOG.js -t [n] phantasy; home
+connect foodnstuff; run earlyOG.js -t [n] phantasy; home
+connect sigma-cosmetics; run earlyOG.js -t [n] phantasy; home
+connect joesguns; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect nectar-net; run earlyOG.js -t [n] phantasy; home
+connect harakiri-sushi; run earlyOG.js -t [n] phantasy; home
+connect sigma-cosmetics; connect max-hardware; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect CSEC; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect CSEC; connect neo-net; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect the-hub; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; connect summit-uni; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect CSEC; connect neo-net; connect crush-fitness; connect zb-institute; connect alpha-ent; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect lexo-corp; connect snap-fitness; connect omnia; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect rho-construction; connect global-pharm; connect unitalife; connect univ-energy; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; connect syscore; connect millenium-fitness; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect rho-construction; connect global-pharm; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect nectar-net; connect phantasy; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; connect I.I.I.I; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect CSEC; connect omega-net; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect CSEC; connect neo-net; connect crush-fitness; connect zb-institute; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect lexo-corp; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect rho-construction; connect global-pharm; connect unitalife; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect CSEC; connect neo-net; connect crush-fitness; connect zb-institute; connect alpha-ent; connect aerocorp; connect deltaone; connect solaris; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect CSEC; connect neo-net; connect johnson-ortho; connect catalyst; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; connect syscore; connect aevum-police; run earlyOG.js -t [n] phantasy; home
+connect iron-gym; run earlyOG.js -t [n] phantasy; home
+connect foodnstuff; connect zer0; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect nectar-net; connect silver-helix; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; run earlyOG.js -t [n] phantasy; home
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect rho-construction; run earlyOG.js -t [n] phantasy; home
+
+connect n00dles; run earlyOG.js -t 1 summit-uni; home;
+connect foodnstuff; run earlyOG.js -t 6 summit-uni; home;
+connect sigma-cosmetics; run earlyOG.js -t 6 summit-uni; home;
+connect joesguns; run earlyOG.js -t 6 summit-uni; home;
+connect hong-fang-tea; connect nectar-net; run earlyOG.js -t 6 summit-uni; home;
+connect harakiri-sushi; run earlyOG.js -t 6 summit-uni; home;
+connect sigma-cosmetics; connect max-hardware; run earlyOG.js -t 13 summit-uni; home;
+connect hong-fang-tea; connect CSEC; run earlyOG.js -t 3 summit-uni; home;
+connect hong-fang-tea; connect CSEC; connect neo-net; run earlyOG.js -t 13 summit-uni; home;
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect the-hub; run earlyOG.js -t 6 summit-uni; home;
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; run earlyOG.js -t 13 summit-uni; home;
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; connect summit-uni; run earlyOG.js -t 26 summit-uni; home;
+connect hong-fang-tea; connect CSEC; connect neo-net; connect crush-fitness; connect zb-institute; connect alpha-ent; run earlyOG.js -t 26 summit-uni; home;
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect lexo-corp; connect snap-fitness; connect omnia; run earlyOG.js -t 6 summit-uni; home;
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect rho-construction; connect global-pharm; connect unitalife; connect univ-energy; run earlyOG.js -t 6 summit-uni; home;
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; connect syscore; connect millenium-fitness; run earlyOG.js -t 13 summit-uni; home;
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect rho-construction; connect global-pharm; run earlyOG.js -t 3 summit-uni; home;
+connect hong-fang-tea; connect nectar-net; connect phantasy; run earlyOG.js -t 13 summit-uni; home;
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; connect I.I.I.I; run earlyOG.js -t 53 summit-uni; home;
+connect hong-fang-tea; connect CSEC; connect omega-net; run earlyOG.js -t 13 summit-uni; home;
+connect hong-fang-tea; connect CSEC; connect neo-net; connect crush-fitness; connect zb-institute; run earlyOG.js -t 13 summit-uni; home;
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect lexo-corp; run earlyOG.js -t 6 summit-uni; home;
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect rho-construction; connect global-pharm; connect unitalife; run earlyOG.js -t 6 summit-uni; home;
+connect hong-fang-tea; connect CSEC; connect neo-net; connect crush-fitness; connect zb-institute; connect alpha-ent; connect aerocorp; connect deltaone; connect solaris; run earlyOG.js -t 6 summit-uni; home;
+connect hong-fang-tea; connect CSEC; connect neo-net; connect johnson-ortho; connect catalyst; run earlyOG.js -t 26 summit-uni; home;
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; connect syscore; connect aevum-police; run earlyOG.js -t 6 summit-uni; home;
+connect iron-gym; run earlyOG.js -t 13 summit-uni; home;
+connect foodnstuff; connect zer0; run earlyOG.js -t 13 summit-uni; home;
+connect hong-fang-tea; connect nectar-net; connect silver-helix; run earlyOG.js -t 26 summit-uni; home;
+connect hong-fang-tea; connect CSEC; connect omega-net; connect netlink; run earlyOG.js -t 53 summit-uni; home;
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; run earlyOG.js -t 13 summit-uni; home;
+connect hong-fang-tea; connect nectar-net; connect phantasy; connect avmnite-02h; connect rothman-uni; connect rho-construction; run earlyOG.js -t 6 summit-uni; home;
+
+
+
+
+SCRIPT RAM - 2.6 GB FAT 2.4 GB Lean
+Currently lean  but not enough to change
+Calculate how many threads can be ran on each server
+noodles - 4 / 1 thread
+CSEC - 8 / 3 threads
+global-pharm - 8 / 3 threads
+harakiri-sushi - 16 / 6 threads 
+aevum-police - 16 / 6 threads
+solaris - 16 / 6 threads
+univ-energy - 16 / 6 threads
+unitalife - 16 / 6 threads
+rho-construction - 16 / 6 threads
+omnia - 16 / 6 threads
+lexo-corp - 16 / 6 threads
+the-hub - 16 / 6 threads
+nectar-net - 16 / 6 threads
+hong-fang-tea - 16 / 6 threads
+joesguns - 16 / 6 threads
+sigma-cosmetics - 16 / 6 threads
+foodnstuff - 16 / 6 threads
+iron-gym - 32 / 12 / 13 threads
+millenium-fitness - 32 / 12 / 13 threads
+omega-net - 32 / 12 / 13 threads
+rothman-uni - 32 / 12 / 13 threads
+avmnite-02h - 32 / 12 / 13 threads
+phantasy - 32 / 12 / 13 threads
+max-hardware - 32 / 12 / 13 threads
+zer0 - 32 / 12 / 13 threads
+neo-net - 32 / 12 / 13 threads
+summit-uni - 64 / 24 / 26 threads
+alpha-ent - 64 / 24 / 26 threads
+catalyst - 64 / 24 / 26 threads
+silver-helix - 64 / 24 / 26 threads
+I.I.I.I - 128 / 49 / 53 threads
+netlink - 128 / 49 / 53 threads
+
+scp earlyOG.js pserv-0; scp earlyOG.js pserv-1; scp earlyOG.js pserv-2; scp earlyOG.js pserv-3; scp earlyOG.js pserv-4; scp earlyOG.js pserv-5; scp earlyOG.js pserv-6; scp earlyOG.js pserv-7; 
+scp earlyOG.js pserv-8; scp earlyOG.js pserv-9; scp earlyOG.js pserv-10; scp earlyOG.js pserv-11; scp earlyOG.js pserv-12; scp earlyOG.js pserv-13; scp earlyOG.js pserv-14; scp earlyOG.js pserv-15;
+scp earlyOG.js pserv-16; scp earlyOG.js pserv-17; scp earlyOG.js pserv-18; scp earlyOG.js pserv-19; scp earlyOG.js pserv-20; scp earlyOG.js pserv-21; scp earlyOG.js pserv-22; scp earlyOG.js pserv-23;
+scp earlyOG.js pserv-24
+
+===========================================
+run earlyOG.js -t [n] phantasy
+
+connect pserv-0; run earlyOG.js -t 300 phantasy; connect pserv-1; run earlyOG.js -t 300 phantasy; connect pserv-2; run earlyOG.js -t 300 phantasy; connect pserv-3; run earlyOG.js -t 300 phantasy; connect pserv-4;
+run earlyOG.js -t 300 phantasy; connect pserv-5; run earlyOG.js -t 300 phantasy; connect pserv-6; run earlyOG.js -t 300 phantasy; connect pserv-7; run earlyOG.js -t 300 phantasy; connect pserv-8; 
+run earlyOG.js -t 300 phantasy; connect pserv-9; run earlyOG.js -t 300 phantasy; connect pserv-10; run earlyOG.js -t 300 phantasy; connect pserv-11; run earlyOG.js -t 300 phantasy; connect pserv-12;
+run earlyOG.js -t 300 phantasy; connect pserv-13; run earlyOG.js -t 300 phantasy; connect pserv-14; run earlyOG.js -t 300 phantasy; connect pserv-15; run earlyOG.js -t 300 phantasy; connect pserv-16;
+run earlyOG.js -t 300 phantasy; connect pserv-17; run earlyOG.js -t 300 phantasy; connect pserv-18; run earlyOG.js -t 300 phantasy; connect pserv-19; run earlyOG.js -t 300 phantasy; connect pserv-20;
+run earlyOG.js -t 300 phantasy; connect pserv-21; run earlyOG.js -t 300 phantasy; connect pserv-22; run earlyOG.js -t 300 phantasy; connect pserv-23; run earlyOG.js -t 300 phantasy; connect pserv-24
+
+
+
+
+
+
+
+'n00dles', 
+'foodnstuff', 
+'sigma-cosmetics', 
+'max-hardware', 
+'joesguns', 
+'CSEC', 
+'hong-fang-tea', 
+'harakiri-sushi', 
+'nectar-net', 
+'neo-net', 
+'the-hub', 
+'rothman-uni', 
+'summit-uni', 
+'alpha-ent', 
+'omnia', 
+'univ-energy', 
+'millenium-fitness', 
+'global-pharm', 
+'phantasy', 
+'I.I.I.I', 
+'omega-net', 
+'zb-institute', 
+'lexo-corp', 
+'unitalife', 
+'solaris',
+'catalyst', 
+'aevum-police', 
+'iron-gym', 
+'zer0', 
+'silver-helix', 
+'netlink', 
+'avmnite-02h', 
+'rho-construction'
+
+
+
+'n00dles', 
+'foodnstuff', 
+'sigma-cosmetics', 
+'max-hardware', 
+'joesguns', 
+'CSEC', 
+'hong-fang-tea', 
+'harakiri-sushi', 
+'nectar-net', 
+'neo-net', 
+'the-hub', 
+'rothman-uni', 
+'summit-uni', 
+'alpha-ent', 
+'omnia', 
+'univ-energy', 
+'millenium-fitness', 
+'global-pharm', 
+'phantasy', 
+'I.I.I.I', 
+'omega-net', 
+'zb-institute', 
+'lexo-corp', 
+'unitalife', 
+'solaris',
+'catalyst', 
+'aevum-police', 
+'iron-gym', 
+'zer0', 
+'silver-helix', 
+'netlink', 
+'avmnite-02h', 
+'rho-construction'
+      
+
+connect n00dles
+$ run NUKE.exe
+$ run early-hack-template.js -t 1
+$ home
+$ connect sigma-cosmetics
+$ run NUKE.exe
+$ run early-hack-template.js -t 6
+$ home
+$ connect joesguns
+$ run NUKE.exe
+$ run early-hack-template.js -t 6
+$ home
+$ connect hong-fang-tea
+$ run NUKE.exe
+$ run early-hack-template.js -t 6
+$ home
+$ connect harakiri-sushi
+$ run NUKE.exe
+$ run early-hack-template.js -t 6
+$ home
+$ connect hong-fang-tea
+$ connect nectar-net
+$ run NUKE.exe
+$ run early-hack-template.js -t 6

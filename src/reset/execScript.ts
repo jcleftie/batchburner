@@ -71,7 +71,6 @@ export async function main(ns: NS): Promise<void> {
     'I.I.I.I',
     'n00dles',
     'foodnstuff',
-    'darkweb',
     'sigma-cosmetics',
     'joesguns',
     'nectar-net',

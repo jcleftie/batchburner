@@ -17,7 +17,22 @@
     "paths": {
       "@/*": ["./src/*"],
       "/src/*": ["./src/*"],
-      "@ns": ["./NetscriptDefinitions.d.ts"]
+      "@ns": ["./NetscriptDefinitions.d.ts"],
+      "@types": [
+        "./src/dt1batch/types.d.ts"
+      ],
+      "@utils": [
+        "./src/dt1batch/utils.ts"
+      ],
+      "@types4": [
+        "./src/4batch/types.d.ts"
+      ],
+      "@utils4": [
+        "./src/4batch/utils.ts"
+      ],
+      "@earlytypes": [
+        "./src/reset/types.d.ts"
+      ],
     }
   },
   "include": [

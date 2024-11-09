@@ -42,6 +42,7 @@ export async function main(ns: NS): Promise<void> {
   // await runScript(ns, 'reset/getPserv.js', logger);
   await runScript(ns, 'reset/scpSetup.js', logger);
   await runScript(ns, 'reset/execScript.js', logger);
+  // await runScript(ns, 'reset/getPserv.js', logger);
 
   logger.info('All reset scripts executed. Entering dashboard monitoring.');
 
@@ -81,7 +82,7 @@ async function runScript(ns: NS, script: string, logger: Logger): Promise<void> 
 }
 
 
-// perhaps return this after the wile true monitoring loop
+// p erhaps return this after the wile true monitoring loop
 // // Display general server information
     // const homeRam = ns.getServerMaxRam('home');
     // const homeUsedRam = ns.getServerUsedRam('home');

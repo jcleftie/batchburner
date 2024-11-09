@@ -1,19 +1,23 @@
 import { NS } from '@ns';
-import { Logger } from '../logger/logger';
+
 /**
- * Distributes and runs a specified script on a list of target servers.
+ * Deletes specified files from all target servers.
+ *
+ * Usage: run deleteFiles.js [file1] [file2] ...
  *
  * @param ns - Netscript environment
  */
-
 export async function main(ns: NS): Promise<void> {
-  const logger = new Logger(ns, 'ez-scp');
-  const FILES_TO_COPY = ['logger/logger.js', 'reset/early.js'];
-  const logPort = 20; // Define which port to use
+  const filesToDelete = ns.args as string[];
 
-  // Identify purchased servers and target hosts
-  const pservs = ns.getPurchasedServers();
-  const targetHosts = [
+  if (filesToDelete.length === 0) {
+    ns.tprint('Please provide at least one filename to delete.');
+    return;
+  }
+
+  // Define the servers where files need to be deleted
+  const purchasedServers = ns.getPurchasedServers();
+  const targetServers = [
     'neo-net',
     'silver-helix',
     'omega-net',
@@ -42,7 +46,6 @@ export async function main(ns: NS): Promise<void> {
     'sigma-cosmetics',
     'joesguns',
     'nectar-net',
-    'hong-fang-tea',
     'hong-fang-tea',
     'harakiri-sushi',
     'zer0',
@@ -85,22 +88,25 @@ export async function main(ns: NS): Promise<void> {
     'avmnite-02h',
   ];
 
-  // Combine pservs and targetHosts into one list
-  const hostsToCopy = [...pservs, ...targetHosts];
+  const allServers = [...purchasedServers, ...targetServers];
 
-
-  // Copy files to each host
-  for (const host of hostsToCopy) {
-    const success = await ns.scp(FILES_TO_COPY, host, 'home');
-    if (success) {
-      logger.info(`Successfully copied files to ${host}`);
+  for (const server of allServers) {
+    if (ns.serverExists(server)) {
+      ns.tprint(`Attempting to delete files on ${server}...`);
+      for (const file of filesToDelete) {
+        const result = ns.rm(file, server);
+        if (result) {
+          ns.tprint(`Successfully deleted ${file} on ${server}`);
+        } else {
+          ns.tprint(`Failed to delete ${file} on ${server}. File may not exist.`);
+        }
+      }
     } else {
-      logger.error(`Failed to copy files to ${host}`);
+      ns.tprint(`Server ${server} does not exist.`);
+    }
+
+    // Introduce a small delay to prevent system overload
+    await ns.sleep(200);
   }
-  logger.info('SCP setup complete.');
-    // Log the completion of the process
-  const endMessage = 'Finished attempting to purchase and set up all servers.';
-  logger.info(endMessage);
-  ns.writePort(logPort, endMessage);
-}
+  ns.tprint('File deletion process complete.');
 }

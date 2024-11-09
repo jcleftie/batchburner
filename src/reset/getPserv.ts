@@ -13,48 +13,55 @@ export async function main(ns: NS): Promise<void> {
   const logPort = 20; // Define which port to use
   const ram = 8; // RAM for each purchased server (8 GB by default)
   const serverScript = 'reset/early.js'; // Script to deploy on each purchased server
+  const logScript = 'logger/logger.js'; // Logger script to deploy on each purchased server
   const threads = 3; // Number of threads to run the script with on each server
-  const delay = 1000; // Delay between attempts in milliseconds
+  const delay = 10000; // Delay between attempts in milliseconds
 
   // Log the start of the process
   const startMessage = 'Starting the getPservs script.';
   logger.info(startMessage);
   ns.writePort(logPort, startMessage);
 
-  for (let i = 0; i < ns.getPurchasedServerLimit(); i++) {
-    if (ns.getServerMoneyAvailable('home') > ns.getPurchasedServerCost(ram)) {
-      // Purchase the server and get its hostname
+  while (ns.getPurchasedServers().length < ns.getPurchasedServerLimit()) {
+    for (let i = 0; i < ns.getPurchasedServerLimit(); i++) {
       const hostname = `pserv-${i}`;
-      const newHostname = ns.purchaseServer(hostname, ram);
 
-      // Check if purchase was successful
-      if (newHostname) {
-        // Copy the script from "home" to the purchased server
-        const scpSuccess = await ns.scp(serverScript, newHostname, 'home');
-        if (!scpSuccess) {
-          logger.error(`Failed to copy ${serverScript} to ${newHostname}.`);
-          continue; // Skip execution if the copy failed
-        }
+      // Only attempt to purchase if the server slot is empty
+      if (!ns.serverExists(hostname)) {
+        if (ns.getServerMoneyAvailable('home') > ns.getPurchasedServerCost(ram)) {
+          // Purchase the server and get its hostname
+          const newHostname = ns.purchaseServer(hostname, ram);
 
-        // Attempt to execute the script and capture the PID
-        const pid = ns.exec(serverScript, newHostname, threads);
-        if (pid === 0) {
-          // Log failure if PID is 0 (indicating an execution failure)
-          logger.error(
-            `Failed to execute ${serverScript} on ${newHostname} with ${threads} thread(s). Check RAM or path.`,
-          );
+          // Check if purchase was successful
+          if (newHostname) {
+            // Copy the script from "home" to the purchased server
+            const scpSuccess = await ns.scp([serverScript, logScript], newHostname, 'home');
+            if (!scpSuccess) {
+              logger.error(`Failed to copy scripts to ${newHostname}.`);
+              continue; // Skip execution if the copy failed
+            }
+
+            // Attempt to execute the script and capture the PID
+            const pid = ns.exec(serverScript, newHostname, threads);
+            if (pid === 0) {
+              logger.error(
+                `Failed to execute ${serverScript} on ${newHostname} with ${threads} thread(s). Check RAM or path.`,
+              );
+            } else {
+              logger.info(
+                `Distributed and executed ${serverScript} on ${newHostname} with ${threads} thread(s). PID: ${pid}`,
+              );
+            }
+          } else {
+            logger.error(`Failed to purchase server for ${hostname}.`);
+          }
         } else {
-          logger.info(
-            `Distributed and executed ${serverScript} on ${newHostname} with ${threads} thread(s). PID: ${pid}`,
-          );
+          logger.warn(`Insufficient funds for purchasing server with ${ram} GB RAM. Retrying...`);
+          await ns.sleep(delay); // Wait and recheck funds
         }
-      } else {
-        logger.error(`Failed to purchase server for ${hostname}.`);
       }
-    } else {
-      logger.warn(`Insufficient funds for purchasing server with ${ram} GB RAM.`);
     }
-    await ns.sleep(delay); // Wait between each purchase attempt
+    await ns.sleep(delay); // Wait before rechecking the server slots
   }
 
   // Log the completion of the process

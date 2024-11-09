@@ -10,7 +10,6 @@ import { Logger } from '../logger/logger';
  */
 export async function main(ns: NS): Promise<void> {
   const logger = new Logger(ns, 'OG-getPservs');
-  const logPort = 20; // Define which port to use
   const ram = 8; // RAM for each purchased server (8 GB by default)
   const threads = 3; // Number of threads to run the script with on each server
   const delay = 1000; // Delay between attempts in milliseconds
@@ -29,8 +28,8 @@ export async function main(ns: NS): Promise<void> {
       //  3. Run our hacking script on the newly-purchased server with 3 threads
       //  4. Increment our iterator to indicate that we've bought a new server
       let hostname = ns.purchaseServer('pserv-' + i, ram);
-      ns.scp('reset/early.js', hostname);
-      ns.exec('reset/early.js', hostname, threads);
+      ns.scp('earlyOG.js', hostname);
+      ns.exec('earlyOG.js', hostname, threads);
       logger.info(`Purchased server ${hostname} with ${ram} GB of RAM.`);
       ++i;
     }
